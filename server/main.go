@@ -4,11 +4,15 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-
+	"server/db"
 	"github.com/gorilla/mux"
 )
 
 func main() {
+	
+	fmt.Println("Trying to connect to db server ")
+	db.Connect()
+
 	router := mux.NewRouter()
 	router.HandleFunc("/", server).Methods("GET")
 	fmt.Println("Go rest server running on http://localhost:8080")

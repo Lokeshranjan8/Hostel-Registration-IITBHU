@@ -1,11 +1,14 @@
-FROM golang:1.22-alpine
+FROM golang:1.25-alpine
 
 WORKDIR /app
 
+COPY go.mod go.sum ./
+RUN go mod download
+
 COPY . .
 
-RUN go mod init server || true && go get github.com/gorilla/mux && go mod tidy
+RUN go build -o app .
 
 EXPOSE 8080
 
-CMD ["go","run","main.go"]
+CMD ["./app"]
