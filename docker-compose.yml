@@ -29,3 +29,17 @@ services:
       interval: 4s
       timeout: 3s
       retries: 3
+  
+
+
+  migrate:
+    image: migrate/migrate
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./server/migrations:/migrations
+    command: >
+      -path=/migrations
+      -database postgres://postgres:postgres@postgres:5432/hostel-db?sslmode=disable
+      up
