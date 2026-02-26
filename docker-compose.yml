@@ -43,3 +43,4 @@ services:
       -path=/migrations
       -database postgres://postgres:postgres@postgres:5432/hostel-db?sslmode=disable
       up
+    restart: no
