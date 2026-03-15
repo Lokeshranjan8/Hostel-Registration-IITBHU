@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS hostel_sessions;
