@@ -1,4 +1,5 @@
 CREATE TYPE session_status_type AS ENUM ('UPCOMING', 'ACTIVE', 'CLOSED');
+CREATE TYPE session_term_type AS ENUM ('ODD', 'EVEN');
 
 CREATE TABLE hostel_sessions (
     id              SERIAL PRIMARY KEY,

@@ -1,3 +1,5 @@
+-- CREATE TYPE gender_type AS ENUM ('MALE','FEMALE');
+
 CREATE TABLE hostels (
     id              SERIAL PRIMARY KEY,
     hostel_name     VARCHAR(100) UNIQUE NOT NULL,     
